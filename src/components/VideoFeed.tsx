@@ -71,7 +71,7 @@ export function VideoFeed() {
                         <Card.Img variant="top" src={image} />
                     </Card>
                 ))} */}
-                {capturedImages && <FaceRecognition imageUrls={capturedImages} />}
+                {capturedImages.length ? capturedImages.map((img) => <FaceRecognition imageUrl={img} />) : null}
             </div>
         </>
     );
