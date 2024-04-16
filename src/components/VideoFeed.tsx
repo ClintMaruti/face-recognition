@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { FaceRecognition } from "./FaceRecognition";
 
 export function VideoFeed() {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -65,11 +66,12 @@ export function VideoFeed() {
                 </div>
             </div>
             <div className="video-thumbnails">
-                {capturedImages.map((image, index) => (
+                {/* {capturedImages.map((image, index) => (
                     <Card key={index} style={{ width: "300px" }}>
                         <Card.Img variant="top" src={image} />
                     </Card>
-                ))}
+                ))} */}
+                {capturedImages && <FaceRecognition imageUrls={capturedImages} />}
             </div>
         </>
     );
